@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Énigme 6 : Labyrinthe CSS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Énigme 6 : Labyrinthe CSS</h1>
+    <p>Le mot de passe est caché dans le CSS. Fouillez dans le code source pour le trouver.</p>
+    
+    <form id="cssForm">
+        <input type="text" id="response" placeholder="Votre réponse">
+        <button type="submit">Valider</button>
+    </form>
+    <p id="feedback"></p>
+
+    <style>
+        /* Le mot de passe est caché ici */
+        body::after {
+            content: "Solution : labyrinthe";
+            display: none;
+        }
+    </style>
+
+    <script>
+        document.getElementById("cssForm").addEventListener("submit", (e) => {
+            e.preventDefault();
+            const response = document.getElementById("response").value.toLowerCase();
+            const feedback = document.getElementById("feedback");
+
+            if (response === "labyrinthe") {
+                feedback.innerHTML = "Correct ! <a href='enigme7.html'>Énigme suivante</a>";
+            } else {
+                feedback.textContent = "Faux ! Essayez encore.";
+            }
+        });
+    </script>
+</body>
+</html>

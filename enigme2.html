@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Énigme 2 : Script Crypté</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Énigme 2 : Script Crypté</h1>
+    <p>Décodez ce message crypté : <code>U29sdXRpb24y</code></p>
+    
+    <form id="cryptForm">
+        <input type="text" id="response" placeholder="Votre réponse">
+        <button type="submit">Valider</button>
+    </form>
+    <p id="feedback"></p>
+
+    <script>
+        document.getElementById("cryptForm").addEventListener("submit", (e) => {
+            e.preventDefault();
+            const response = document.getElementById("response").value.toLowerCase();
+            const feedback = document.getElementById("feedback");
+            const solution = atob("U29sdXRpb24y").toLowerCase(); // Decode Base64
+
+            if (response === solution) {
+                feedback.innerHTML = "Correct ! <a href='enigme3.html'>Énigme suivante</a>";
+            } else {
+                feedback.textContent = "Faux ! Essayez encore.";
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Énigme 3 : Littéraire</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Énigme 3 : Littéraire</h1>
+    <p>Quel auteur a écrit *Les Misérables* ?</p>
+    
+    <form id="literatureForm">
+        <input type="text" id="response" placeholder="Votre réponse">
+        <button type="submit">Valider</button>
+    </form>
+    <p id="feedback"></p>
+
+    <script>
+        document.getElementById("literatureForm").addEventListener("submit", (e) => {
+            e.preventDefault();
+            const response = document.getElementById("response").value.toLowerCase();
+            const feedback = document.getElementById("feedback");
+
+            if (response.includes("hugo")) {
+                feedback.innerHTML = "Correct ! <a href='enigme4.html'>Énigme suivante</a>";
+            } else {
+                feedback.textContent = "Faux ! Essayez encore.";
+            }
+        });
+    </script>
+</body>
+</html>

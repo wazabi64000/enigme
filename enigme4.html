@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Énigme 4 : Débuggage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Énigme 4 : Débuggage</h1>
+    <p>Corrigez le code suivant pour obtenir la solution :</p>
+    <pre>
+        <code>
+let resultat = "??";
+if resultat === "débug" {
+    console.log("Correct");
+}
+        </code>
+    </pre>
+    <p>Saisissez le mot correct :</p>
+
+    <form id="debugForm">
+        <input type="text" id="response" placeholder="Votre réponse">
+        <button type="submit">Valider</button>
+    </form>
+    <p id="feedback"></p>
+
+    <script>
+        document.getElementById("debugForm").addEventListener("submit", (e) => {
+            e.preventDefault();
+            const response = document.getElementById("response").value.toLowerCase();
+            const feedback = document.getElementById("feedback");
+
+            if (response === "débug") {
+                feedback.innerHTML = "Correct ! <a href='enigme5.html'>Énigme suivante</a>";
+            } else {
+                feedback.textContent = "Faux ! Essayez encore.";
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Énigme 8 : Code Binaire</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Énigme 8 : Code Binaire</h1>
+    <p>Déchiffrez ce code binaire : <code>01110011 01101111 01101100 01110101 01110100 01101001 01101111 01101110</code></p>
+    
+    <form id="binaryForm">
+        <input type="text" id="response" placeholder="Votre réponse">
+        <button type="submit">Valider</button>
+    </form>
+    <p id="feedback"></p>
+
+    <script>
+        document.getElementById("binaryForm").addEventListener("submit", (e) => {
+            e.preventDefault();
+            const response = document.getElementById("response").value.toLowerCase();
+            const feedback = document.getElementById("feedback");
+
+            if (response === "solution") {
+                feedback.innerHTML = "Correct ! <a href='enigme9.html'>Énigme suivante</a>";
+            } else {
+                feedback.textContent = "Faux ! Essayez encore.";
+            }
+        });
+    </script>
+</body>
+</html>

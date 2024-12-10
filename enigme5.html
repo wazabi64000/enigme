@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Énigme 5 : Puzzle Logique</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Énigme 5 : Puzzle Logique</h1>
+    <p>Associez correctement ces éléments :</p>
+    <ul>
+        <li>Lune - Soleil</li>
+        <li>Feu - ?</li>
+        <li>Eau - Air</li>
+    </ul>
+    <form id="puzzleForm">
+        <input type="text" id="response" placeholder="Votre réponse">
+        <button type="submit">Valider</button>
+    </form>
+    <p id="feedback"></p>
+
+    <script>
+        document.getElementById("puzzleForm").addEventListener("submit", (e) => {
+            e.preventDefault();
+            const response = document.getElementById("response").value.toLowerCase();
+            const feedback = document.getElementById("feedback");
+
+            if (response === "terre") {
+                feedback.innerHTML = "Correct ! <a href='enigme6.html'>Énigme suivante</a>";
+            } else {
+                feedback.textContent = "Faux ! Essayez encore.";
+            }
+        });
+    </script>
+</body>
+</html>
